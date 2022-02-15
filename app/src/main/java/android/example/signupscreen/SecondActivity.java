@@ -17,9 +17,13 @@ public class SecondActivity extends AppCompatActivity {
                 intent.getStringExtra(MainActivity.NAME_MESSAGE);
         String email =
                 intent.getStringExtra(MainActivity.EMAIL_MESSAGE);
+        String radio =
+                intent.getStringExtra(MainActivity.RADIO_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.nameDisplay);
         textView.setText(message);
         TextView emailView = (TextView) findViewById(R.id.emailDisplay);
         emailView.setText(email);
+        TextView radioView = (TextView) findViewById(R.id.radioDisplay);
+        radioView.setText(radio);
     }
 }

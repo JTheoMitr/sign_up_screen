@@ -13,14 +13,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String NAME_MESSAGE = "android.example.com.activities.extra.NAME";
     public static final String EMAIL_MESSAGE = "android.example.com.activities.extra.EMAIL";
+    public static final String RADIO_MESSAGE = "android.example.com.activities.extra.RADIO";
     private EditText nameEditText;
     private EditText emailEditText;
+    private RadioGroup radioGroup;
+    RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         nameEditText = (EditText) findViewById(R.id.editTextTextPersonName);
         emailEditText = (EditText) findViewById(R.id.editTextEmailAddress);
+        radioGroup = (RadioGroup) findViewById(R.id.coffee_or_tea);
     }
 
     @Override
@@ -55,10 +60,14 @@ public class MainActivity extends AppCompatActivity {
     public void launchSecondActivity(View view) {
         //Log.d(LOG_TAG, "Button Clicked!");
         Intent intent = new Intent(this, SecondActivity.class);
+        int selectedID = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(selectedID);
+        String radio = radioButton.getText().toString();
         String message = nameEditText.getText().toString();
         String email = emailEditText.getText().toString();
         intent.putExtra(NAME_MESSAGE, message);
         intent.putExtra(EMAIL_MESSAGE, email);
+        intent.putExtra(RADIO_MESSAGE, radio);
 
 //        Person person = new Person(message,email);
 //        intent.putExtra("person",person);
@@ -73,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radio_coffee:
                 if (checked)
-                    Toast.makeText(this, "You Love Coffee", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "You Love Coffee", Toast.LENGTH_SHORT).show();
                     break;
             case R.id.radio_tea:
                 if (checked)
