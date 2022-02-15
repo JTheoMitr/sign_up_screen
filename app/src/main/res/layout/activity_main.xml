@@ -92,6 +92,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_coffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/you_love_coffee"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_tea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/you_enjoy_tea"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
 
 
     <Button

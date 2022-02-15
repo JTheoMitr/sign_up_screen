@@ -4,4 +4,6 @@
     <string name="groups">Groups</string>
     <string name="your_name_is">Your Name is:</string>
     <string name="submit">Submit</string>
+    <string name="you_love_coffee">You Love Coffee</string>
+    <string name="you_enjoy_tea">You Enjoy Tea</string>
 </resources>

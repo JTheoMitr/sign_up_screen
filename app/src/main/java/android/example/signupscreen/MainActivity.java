@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -62,6 +63,23 @@ public class MainActivity extends AppCompatActivity {
         Person person = new Person(message,email);
         intent.putExtra("person",person);
         startActivity(intent);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_coffee:
+                if (checked)
+                    Toast.makeText(this, "You Love Coffee", Toast.LENGTH_LONG).show();
+                    break;
+            case R.id.radio_tea:
+                if (checked)
+                    Toast.makeText(this, "You Enjoy Tea", Toast.LENGTH_LONG).show();
+                    break;
+        }
     }
 
 
