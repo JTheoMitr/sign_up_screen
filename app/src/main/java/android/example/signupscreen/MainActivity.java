@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(NAME_MESSAGE, message);
         intent.putExtra(EMAIL_MESSAGE, email);
 
-        Person person = new Person(message,email);
-        intent.putExtra("person",person);
+//        Person person = new Person(message,email);
+//        intent.putExtra("person",person);
         startActivity(intent);
     }
 
